@@ -12,6 +12,115 @@
             margin: 0;
             color: #222;
         }
+        header {
+            background: url('lake natron image .png') center/cover no-repeat;
+            color: #fff;
+            padding: 80px 0 120px 0;
+            text-align: center;
+            position: relative;
+        }
+        header::after {
+            content: '';
+            position: absolute;
+            left: 0; right: 0; top: 0; bottom: 0;
+            background: rgba(0,0,0,0.4);
+            z-index: 1;
+        }
+        header > * {
+            position: relative;
+            z-index: 2;
+        }
+        header h1 {
+            font-size: 3rem;
+            margin: 0 0 10px 0;
+            letter-spacing: 2px;
+            color: #fff; /* Changed from default to white */
+        }
+        header p {
+            font-size: 1.3rem;
+            margin: 0 0 20px 0;
+        }
+        nav {
+            background: #fff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav a {
+            color: #2d6a4f;
+            text-decoration: none;
+            margin: 0 18px;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+        nav a:hover {
+            color: #40916c;
+        }
+        .hamburger {
+            display: none;
+            position: absolute;
+            left: 20px;
+            top: 25px;
+            z-index: 1002;
+            width: 36px;
+            height: 36px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .hamburger span {
+            display: block;
+            width: 28px;
+            height: 4px;
+            margin: 5px 0;
+            background: #2d6a4f;
+            border-radius: 2px;
+            transition: 0.3s;
+        }
+        .mobile-nav {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 220px;
+            height: 100%;
+            background: #fff;
+            box-shadow: 2px 0 12px rgba(0,0,0,0.12);
+            z-index: 1001;
+            padding-top: 80px;
+            flex-direction: column;
+            gap: 18px;
+            transition: transform 0.3s;
+            transform: translateX(-100%);
+        }
+        .mobile-nav.open {
+            display: flex;
+            transform: translateX(0);
+        }
+        .mobile-nav a {
+            color: #2d6a4f;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            padding: 14px 24px;
+            border-bottom: 1px solid #f0f0f0;
+            transition: background 0.2s;
+        }
+        .mobile-nav a:hover {
+            background: #f1f3f2;
+        }
+        .mobile-nav .close-btn {
+            position: absolute;
+            top: 18px;
+            right: 18px;
+            background: none;
+            border: none;
+            font-size: 1.7rem;
+            color: #2d6a4f;
+            cursor: pointer;
+        }
         .container {
             max-width: 800px;
             margin: 40px auto;
@@ -40,29 +149,216 @@
             text-decoration: underline;
             font-weight: 600;
         }
+        .service {
+            display: flex;
+            align-items: flex-start;
+            gap: 18px;
+            margin-bottom: 32px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 18px 14px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+        }
+        .service img {
+            width: 120px;
+            height: 90px;
+            object-fit: cover;
+            border-radius: 6px;
+            flex-shrink: 0;
+        }
+        .service-content {
+            flex: 1;
+        }
+        @media (max-width: 600px) {
+            .service {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .service img {
+                width: 100%;
+                height: 140px;
+                margin-bottom: 10px;
+            }
+        }
+        @media (max-width: 700px) {
+            nav {
+                display: none;
+            }
+            .hamburger {
+                display: flex;
+            }
+            header {
+                padding-top: 60px;
+            }
+        }
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background: #2d6a4f;
+            color: #fff;
+            position: relative;
+            z-index: 100;
+        }
     </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
+    <button class="hamburger" aria-label="Open menu" id="hamburgerBtn">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+    <nav>
+        <a href="index.html#about">About</a>
+        <a href="index.html#features">Features</a>
+        <a href="index.html#gallery">Gallery</a>
+        <a href="index.html#contact">Contact</a>
+    </nav>
+    <div class="mobile-nav" id="mobileNav">
+        <button class="close-btn" aria-label="Close menu" id="closeNavBtn">&times;</button>
+        <a href="index.html#about" onclick="closeMobileNav()">About</a>
+        <a href="index.html#features" onclick="closeMobileNav()">Features</a>
+        <a href="index.html#gallery" onclick="closeMobileNav()">Gallery</a>
+        <a href="index.html#contact" onclick="closeMobileNav()">Contact</a>
+    </div>
+    <header>
+        <h1>Naibala Lake Natron Lodge</h1>
+        <p>Your gateway to unforgettable tourism experiences</p>
+    
+    <div style="position:absolute;top:24px;right:24px;z-index:3;display:flex;gap:14px;">
+            <a href="https://wa.me/255712345678" target="_blank" title="WhatsApp" style="color:#fff;font-size:1.7rem;">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+            <!-- Add more social icons here if needed -->
+            <!-- Example:
+            <a href="https://facebook.com/yourpage" target="_blank" title="Facebook" style="color:#fff;font-size:1.7rem;">
+                <i class="fab fa-facebook"></i>
+            </a>
+            -->
+        </div>
+    </header>
     <div class="container">
         <h1>Tourist Services at Lake Natron, Tanzania</h1>
         <p>
-            Lake Natron is a unique destination in northern Tanzania, famous for its striking landscapes, flamingo populations, and cultural experiences. Here are some of the tourist services you can enjoy in the area:
+            Lake Natron is a unique destination in northern Tanzania, famous for its striking landscapes, flamingo populations, and cultural experiences. Below are some of the top tourist services you can enjoy in the area, each designed to make your visit unforgettable:
         </p>
-        <ul>
-            <li><strong>Guided Nature Walks:</strong> Explore the shores of Lake Natron with experienced guides who explain the unique ecosystem, geology, and wildlife.</li>
-            <li><strong>Flamingo Watching:</strong> Witness thousands of lesser flamingos nesting and feeding on the lake, especially during breeding season.</li>
-            <li><strong>Ol Doinyo Lengai Volcano Tours:</strong> Trek or take guided excursions to the "Mountain of God," an active volcano sacred to the Maasai people.</li>
-            <li><strong>Waterfall Hikes:</strong> Enjoy scenic hikes to nearby waterfalls such as the Ngare Sero Waterfalls, perfect for cooling off and relaxing.</li>
-            <li><strong>Maasai Cultural Visits:</strong> Visit local Maasai villages to learn about their traditions, lifestyle, and crafts.</li>
-            <li><strong>Bird Watching:</strong> Discover a variety of bird species that inhabit the area besides flamingos.</li>
-            <li><strong>Camping & Picnics:</strong> Arrange for camping experiences or picnics in safe, scenic spots around the lake.</li>
-            <li><strong>Photography Tours:</strong> Capture the dramatic landscapes, wildlife, and sunsets with the help of local guides.</li>
-            <li><strong>Custom Safari Excursions:</strong> Organize safaris to nearby attractions such as Serengeti, Ngorongoro, or Lake Manyara.</li>
-        </ul>
+        
+        <div class="service">
+            <img src="https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?auto=format&fit=crop&w=400&q=80" alt="Guided Nature Walks">
+            <div class="service-content">
+                <h3>Guided Nature Walks</h3>
+                <p>
+                    Explore the shores of Lake Natron with experienced local guides. Learn about the unique alkaline ecosystem, spot wildlife such as zebras and gazelles, and discover the fascinating geology that shapes this dramatic landscape.
+                </p>
+            </div>
+        </div>
+        
+        <div class="service">
+            <img src="https://images.unsplash.com/photo-1508672019048-805c876b67e2?auto=format&fit=crop&w=400&q=80" alt="Flamingo Watching">
+            <div class="service-content">
+                <h3>Flamingo Watching</h3>
+                <p>
+                    Lake Natron is the most important breeding site for lesser flamingos in East Africa. Witness thousands of flamingos nesting and feeding in the shallow, mineral-rich waters—an awe-inspiring spectacle, especially during the breeding season.
+                </p>
+            </div>
+        </div>
+        
+        <div class="service">
+            <img src="https://images.unsplash.com/photo-1464013778555-8e723c2f01f8?auto=format&fit=crop&w=400&q=80" alt="Ol Doinyo Lengai Volcano">
+            <div class="service-content">
+                <h3>Ol Doinyo Lengai Volcano Tours</h3>
+                <p>
+                    Embark on a trek to Ol Doinyo Lengai, the "Mountain of God" and an active volcano sacred to the Maasai. Adventurous visitors can climb to the summit for sunrise, enjoying breathtaking views of the Rift Valley and surrounding landscapes.
+                </p>
+            </div>
+        </div>
+        
+        <div class="service">
+            <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=400&q=80" alt="Waterfall Hikes">
+            <div class="service-content">
+                <h3>Waterfall Hikes</h3>
+                <p>
+                    Hike through scenic gorges to reach the beautiful Ngare Sero Waterfalls. Cool off in the refreshing pools, enjoy a picnic, and take in the lush greenery—a stark contrast to the arid plains around the lake.
+                </p>
+            </div>
+        </div>
+        
+        <div class="service">
+            <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80" alt="Maasai Cultural Visits">
+            <div class="service-content">
+                <h3>Maasai Cultural Visits</h3>
+                <p>
+                    Visit authentic Maasai villages to learn about their rich traditions, daily life, and crafts. Participate in traditional dances, sample local cuisine, and support community-based tourism initiatives.
+                </p>
+            </div>
+        </div>
+        
+        <div class="service">
+            <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80" alt="Bird Watching">
+            <div class="service-content">
+                <h3>Bird Watching</h3>
+                <p>
+                    Besides flamingos, Lake Natron is home to a variety of bird species, including pelicans, storks, and waders. Birdwatchers will delight in the diversity and abundance of avian life in this unique habitat.
+                </p>
+            </div>
+        </div>
+        
+        <div class="service">
+            <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=400&q=80" alt="Camping and Picnics">
+            <div class="service-content">
+                <h3>Camping &amp; Picnics</h3>
+                <p>
+                    Experience the tranquility of Lake Natron by camping under the stars or enjoying a picnic in safe, scenic spots. Our staff can help arrange all necessary equipment and meals for a memorable outdoor adventure.
+                </p>
+            </div>
+        </div>
+        
+        <div class="service">
+            <img src="https://images.unsplash.com/photo-1465101178521-c1a9136a3fdc?auto=format&fit=crop&w=400&q=80" alt="Photography Tours">
+            <div class="service-content">
+                <h3>Photography Tours</h3>
+                <p>
+                    Capture the dramatic landscapes, vibrant wildlife, and stunning sunsets of Lake Natron. Local guides know the best spots and times for unforgettable photos.
+                </p>
+            </div>
+        </div>
+        
+        <div class="service">
+            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=400&q=80" alt="Custom Safari Excursions">
+            <div class="service-content">
+                <h3>Custom Safari Excursions</h3>
+                <p>
+                    Organize safaris to nearby world-famous attractions such as Serengeti National Park, Ngorongoro Crater, or Lake Manyara. We help tailor your safari for the best wildlife viewing and cultural experiences.
+                </p>
+            </div>
+        </div>
+        
         <p>
             For more information or to book any of these services, please contact our guest house staff. We are happy to help you plan an unforgettable experience at Lake Natron!
         </p>
         <a class="back-link" href="index.html">&larr; Back to Home</a>
     </div>
+    <footer>
+        &copy; 2025 Naibala Lake Natron Lodge. All rights reserved.Designed by Naini Abraham
+    </footer>
+    <script>
+        // filepath: c:\Users\ADMIN\Desktop\Guest House Project\Touristservices.html
+        const hamburgerBtn = document.getElementById('hamburgerBtn');
+        const mobileNav = document.getElementById('mobileNav');
+        const closeNavBtn = document.getElementById('closeNavBtn');
+        function openMobileNav() {
+            mobileNav.classList.add('open');
+        }
+        function closeMobileNav() {
+            mobileNav.classList.remove('open');
+        }
+        hamburgerBtn.addEventListener('click', openMobileNav);
+        closeNavBtn.addEventListener('click', closeMobileNav);
+        document.addEventListener('click', function(e) {
+            if (mobileNav.classList.contains('open') && !mobileNav.contains(e.target) && e.target !== hamburgerBtn) {
+                closeMobileNav();
+            }
+        });
+    </script>
 </body>
 </html>
