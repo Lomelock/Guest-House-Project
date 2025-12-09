@@ -1,67 +1,832 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prices and Availability</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Primary SEO meta -->
+    <meta name="description" content="Naibala Lake Natron Lodge pricing and availability — affordable accommodation at Lake Natron with flexible meal plans. Book your stay today!" />
+
+    <!-- Keywords -->
+    <meta name="keywords" content="Lake Natron lodge prices, accommodation costs, Tanzania lodge rates, bed and breakfast rates, full board pricing, Naibala Lake Natron Lodge cost" />
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://naibalalakenatronlodge.com/pices.html" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Prices & Availability | Naibala Lake Natron Lodge" />
+    <meta property="og:description" content="Check our transparent pricing for accommodation at Lake Natron. Bed Only, Bed & Breakfast, and Full Board options available." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://naibalalakenatronlodge.com/pices.html" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Prices & Availability | Naibala Lake Natron Lodge" />
+    <meta name="twitter:description" content="Transparent pricing for Lake Natron accommodation with multiple meal plan options." />
+
+    <title>Prices & Availability | Naibala Lake Natron Lodge</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:700,400&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="file_00000000a1c8622fa567ee363f80a636.png">
+    
     <style>
-  .pricing-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    padding: 20px;
-    font-family: Arial, sans-serif;
-  }
-
-  .pricing-card {
-    background: #f8f8f8;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    padding: 20px;
-    text-align: center;
-    transition: transform 0.3s ease;
-  }
-
-  .pricing-card:hover {
-    transform: translateY(-5px);
-  }
-
-  .pricing-card h3 {
-    margin-bottom: 10px;
-    color: #333;
-  }
-
-  .pricing-card p {
-    font-size: 16px;
-    margin-bottom: 15px;
-    color: #666;
-  }
-
-  .price {
-    font-size: 24px;
-    font-weight: bold;
-    color: #007b5e;
-  }
-</style>
-
-<div class="pricing-container">
-  <div class="pricing-card">
-    <h3>Full Board (FB)</h3>
-    <p>Room with breakfast, lunch & dinner</p>
-    <div class="price">$60</div>
-  </div>
-
-  <div class="pricing-card">
-    <h3>Bed & Breakfast (B&B)</h3>
-    <p>Room with breakfast</p>
-    <div class="price">$45</div>
-  </div>
-
-  <div class="pricing-card">
-    <h3>Bed Only (Room Only)</h3>
-    <p>Room without meals</p>
-    <div class="price">$40</div>
-  </div>
-</div>
+        body {
+            font-family: 'Montserrat', Arial, sans-serif;
+            margin: 0;
+            background: #f8f9fa;
+            color: #222;
+        }
+        header {
+            background: url('file_00000000a1c8622fa567ee363f80a636.png') center 60%/cover no-repeat;
+            color: #fff;
+            padding: 80px 0 120px 0;
+            text-align: center;
+            position: relative;
+        }
+        header::after {
+            content: '';
+            position: absolute;
+            left: 0; right: 0; top: 0; bottom: 0;
+            background: rgba(0,0,0,0.4);
+            z-index: 1;
+        }
+        header > * {
+            position: relative;
+            z-index: 2;
+        }
+        header h1 {
+            font-size: 3rem;
+            margin: 0 0 10px 0;
+            letter-spacing: 2px;
+            color: #fff;
+        }
+        header p {
+            font-size: 1.3rem;
+            margin: 0 0 20px 0;
+        }
+        nav {
+            background: #fff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            padding: 10px 0;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        nav a {
+            color: #2d6a4f;
+            text-decoration: none;
+            margin: 0 18px;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+        nav a:hover {
+            color: #40916c;
+        }
+        .hamburger {
+            display: none;
+            position: absolute;
+            left: 20px;
+            top: 25px;
+            z-index: 1002;
+            width: 36px;
+            height: 36px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .hamburger span {
+            display: block;
+            width: 28px;
+            height: 4px;
+            margin: 5px 0;
+            background: #2d6a4f;
+            border-radius: 2px;
+            transition: 0.3s;
+        }
+        .mobile-nav {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 220px;
+            height: 100%;
+            background: #fff;
+            box-shadow: 2px 0 12px rgba(0,0,0,0.12);
+            z-index: 1001;
+            padding-top: 80px;
+            flex-direction: column;
+            gap: 18px;
+            transition: transform 0.3s;
+            transform: translateX(-100%);
+        }
+        .mobile-nav.open {
+            display: flex;
+            transform: translateX(0);
+        }
+        .mobile-nav a {
+            color: #2d6a4f;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            padding: 14px 24px;
+            border-bottom: 1px solid #f0f0f0;
+            transition: background 0.2s;
+        }
+        .mobile-nav a:hover {
+            background: #f1f3f2;
+        }
+        .mobile-nav .close-btn {
+            position: absolute;
+            top: 18px;
+            right: 18px;
+            background: none;
+            border: none;
+            font-size: 1.7rem;
+            color: #2d6a4f;
+            cursor: pointer;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        h1, h2 {
+            color: #2d6a4f;
+            text-align: center;
+        }
+        h1 {
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+        h1::after {
+            content: '';
+            display: block;
+            height: 4px;
+            background: linear-gradient(90deg, #2d6a4f 0%, #40916c 100%);
+            width: 60%;
+            margin: 8px auto 0;
+            border-radius: 2px;
+        }
+        .intro-text {
+            color: #555;
+            line-height: 1.8;
+            font-size: 1.05rem;
+            text-align: center;
+            margin: 30px 0 40px 0;
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            padding: 24px;
+            border-radius: 10px;
+            border-left: 5px solid #40916c;
+        }
+        .pricing-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
+        }
+        .pricing-card {
+            background: linear-gradient(135deg, #ffffff 0%, #f5f9f7 100%);
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(45, 106, 79, 0.1);
+            padding: 30px 24px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top: 5px solid #40916c;
+            position: relative;
+        }
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 25px rgba(45, 106, 79, 0.2);
+        }
+        .pricing-card h3 {
+            color: #2d6a4f;
+            font-size: 1.6rem;
+            margin: 0 0 10px 0;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .pricing-card .description {
+            color: #666;
+            font-size: 1rem;
+            margin-bottom: 15px;
+            line-height: 1.6;
+            min-height: 50px;
+        }
+        .pricing-card .price {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #2d6a4f;
+            margin: 20px 0;
+        }
+        .pricing-card .price-label {
+            color: #999;
+            font-size: 0.9rem;
+            margin-top: 5px;
+        }
+        .pricing-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+            text-align: left;
+            color: #555;
+        }
+        .pricing-card li {
+            padding: 8px 0;
+            border-bottom: 1px solid #e8e8e8;
+            position: relative;
+            padding-left: 25px;
+        }
+        .pricing-card li::before {
+            content: '✓';
+            color: #40916c;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            font-size: 1.2rem;
+        }
+        .pricing-card li:last-child {
+            border-bottom: none;
+        }
+        .book-btn {
+            background: linear-gradient(135deg, #2d6a4f 0%, #40916c 100%);
+            color: #fff;
+            border: none;
+            padding: 14px 32px;
+            border-radius: 6px;
+            font-size: 1.05rem;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .book-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(45, 106, 79, 0.3);
+        }
+        .add-ons-section {
+            background: #fff;
+            border-radius: 12px;
+            padding: 30px;
+            margin: 50px 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+        }
+        .add-ons-section h2 {
+            font-size: 2rem;
+            margin-top: 0;
+        }
+        .add-ons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .add-on-item {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #40916c;
+        }
+        .add-on-item h4 {
+            color: #2d6a4f;
+            margin-top: 0;
+            font-size: 1.2rem;
+        }
+        .add-on-item p {
+            color: #666;
+            margin: 10px 0;
+            font-size: 0.95rem;
+        }
+        .add-on-price {
+            color: #40916c;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+        .faq-section {
+            background: #fff;
+            border-radius: 12px;
+            padding: 30px;
+            margin: 50px 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+        }
+        .faq-section h2 {
+            font-size: 2rem;
+            margin-top: 0;
+        }
+        .faq-item {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #e8e8e8;
+            padding-bottom: 20px;
+        }
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+        .faq-item h4 {
+            color: #2d6a4f;
+            margin: 0 0 10px 0;
+            font-size: 1.1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .faq-item p {
+            color: #666;
+            margin: 0;
+            line-height: 1.6;
+        }
+        .conservation-fees-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+        .conservation-fee-card {
+            background: #fff;
+            padding: 24px;
+            border-radius: 10px;
+            border-top: 5px solid #f57c00;
+            box-shadow: 0 3px 12px rgba(245, 124, 0, 0.15);
+        }
+        .conservation-fee-card h3 {
+            color: #e65100;
+            font-size: 1.2rem;
+            margin: 0 0 12px 0;
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+        .fee-price {
+            font-size: 2.2rem;
+            font-weight: bold;
+            color: #e65100;
+            margin: 12px 0;
+        }
+        .fee-details {
+            color: #888;
+            font-size: 0.95rem;
+            margin: 5px 0 10px 0;
+        }
+        .fee-description {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin: 10px 0 0 0;
+        }
+        .conservation-fee-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .conservation-fee-card li {
+            color: #666;
+            font-size: 0.9rem;
+            padding: 6px 0;
+            position: relative;
+            padding-left: 20px;
+        }
+        .conservation-fee-card li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #f57c00;
+            font-weight: bold;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 30px;
+            color: #2d6a4f;
+            text-decoration: underline;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background: #2d6a4f;
+            color: #fff;
+            margin-top: 40px;
+        }
+        @media (max-width: 700px) {
+            nav {
+                display: none;
+            }
+            .hamburger {
+                display: flex;
+            }
+            header {
+                padding-top: 60px;
+                padding-bottom: 80px;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+            h1::after {
+                width: 80%;
+            }
+            .pricing-container {
+                grid-template-columns: 1fr;
+            }
+            .pricing-card {
+                padding: 20px;
+            }
+            .pricing-card h3 {
+                font-size: 1.3rem;
+            }
+            .pricing-card .price {
+                font-size: 2rem;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
+
+<body>
+    <button class="hamburger" aria-label="Open menu" id="hamburgerBtn">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+    <nav>
+        <a href="index.html#about">About</a>
+        <a href="index.html#features">Features</a>
+        <a href="Touristservices.html">Tourist Services</a>
+        <a href="index.html#contact">Contact</a>
+    </nav>
+    <div class="mobile-nav" id="mobileNav">
+        <button class="close-btn" aria-label="Close menu" id="closeNavBtn">&times;</button>
+        <a href="index.html#about" onclick="closeMobileNav()">About</a>
+        <a href="index.html#features" onclick="closeMobileNav()">Features</a>
+        <a href="Touristservices.html" onclick="closeMobileNav()">Tourist Services</a>
+        <a href="index.html#contact" onclick="closeMobileNav()">Contact</a>
+    </div>
+    <header>
+        <h1>Naibala Lake Natron Lodge</h1>
+        <p>Transparent Pricing & Availability</p>
+        <div style="position:absolute;top:24px;right:24px;z-index:3;display:flex;gap:14px;">
+            <a href="https://wa.me/255748709899" target="_blank" title="WhatsApp" style="color:#fff;font-size:1.7rem;">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+            <a href="https://facebook.com/yourpage" target="_blank" title="Facebook" style="color:#fff;font-size:1.7rem;">
+                <i class="fab fa-facebook"></i>
+            </a>
+            <a href="https://instagram.com/yourprofile" target="_blank" title="Instagram" style="color:#fff;font-size:1.7rem;">
+                <i class="fab fa-instagram"></i>
+            </a>
+        </div>
+    </header>
+
+    <div class="container">
+        <h1>Prices & Availability</h1>
+        
+        <div class="intro-text">
+            <p>
+                At Naibala Lake Natron Lodge, we believe in transparent, competitive pricing that offers excellent value for money. Choose from our flexible accommodation and meal plan options to suit your budget and preferences. All prices are per person per night unless otherwise stated.
+            </p>
+        </div>
+
+        <!-- MAIN PRICING SECTION -->
+        <section>
+            <h2 style="color: #2d6a4f; font-size: 1.8rem; margin-bottom: 30px;">Accommodation & Meal Plans</h2>
+            
+            <div class="pricing-container">
+                <!-- Card 1: Full Board -->
+                <div class="pricing-card">
+                    <h3>🍽️ Full Board (FB)</h3>
+                    <p class="description">Complete comfort with all meals included. Perfect for guests who want to enjoy authentic local cuisine without worrying about dining options.</p>
+                    <div class="price">$65</div>
+                    <p class="price-label">Per person per night</p>
+                    <ul>
+                        <li>Comfortable room accommodation</li>
+                        <li>Breakfast with local & international options</li>
+                        <li>Lunch with fresh local dishes</li>
+                        <li>Dinner with three-course meals</li>
+                        <li>Hot & cold beverages</li>
+                        <li>Free Wi-Fi access</li>
+                    </ul>
+                    <a href="https://wa.me/255748709899?text=I'd%20like%20to%20book%20Full%20Board" class="book-btn">Book Now</a>
+                </div>
+
+                <!-- Card 2: Bed & Breakfast -->
+                <div class="pricing-card">
+                    <h3>🌅 Bed & Breakfast (B&B)</h3>
+                    <p class="description">The most popular option featuring a comfortable room with hearty breakfast. Great for exploring local restaurants and food options.</p>
+                    <div class="price">$50</div>
+                    <p class="price-label">Per person per night</p>
+                    <ul>
+                        <li>Comfortable room accommodation</li>
+                        <li>Full English & continental breakfast</li>
+                        <li>Fresh coffee and tea service</li>
+                        <li>Access to kitchen facilities*</li>
+                        <li>Free Wi-Fi access</li>
+                        <li>Local recommendations included</li>
+                    </ul>
+                    <a href="https://wa.me/255748709899?text=I'd%20like%20to%20book%20Bed%20and%20Breakfast" class="book-btn">Book Now</a>
+                </div>
+
+                <!-- Card 3: Bed Only -->
+                <div class="pricing-card">
+                    <h3>🛏️ Bed Only (Room Only)</h3>
+                    <p class="description">Budget-friendly accommodation without meals. Perfect for independent travelers wanting to explore local dining options.</p>
+                    <div class="price">$40</div>
+                    <p class="price-label">Per person per night</p>
+                    <ul>
+                        <li>Comfortable room accommodation</li>
+                        <li>Private bathroom with hot water</li>
+                        <li>Room cleaning service</li>
+                        <li>Free Wi-Fi access</li>
+                        <li>24/7 security & concierge</li>
+                        <li>Luggage storage available</li>
+                    </ul>
+                    <a href="https://wa.me/255748709899?text=I'd%20like%20to%20book%20Bed%20Only" class="book-btn">Book Now</a>
+                </div>
+            </div>
+
+            <p style="text-align: center; color: #666; margin-top: 20px; font-style: italic;">
+                *Access to kitchen facilities available for B&B guests with notice. Prices are subject to availability and may vary during peak seasons.
+            </p>
+        </section>
+
+        <!-- CONSERVATION AREA FEES SECTION -->
+        <div class="add-ons-section" style="background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%); border-left: 5px solid #f57c00;">
+            <h2 style="color: #e65100;">Lake Natron Conservation Area Fees</h2>
+            <p style="color: #333; line-height: 1.7; font-size: 1.05rem;">
+                <strong>Important:</strong> In addition to our lodge accommodation rates, all visitors to the Lake Natron Conservation Area must pay several mandatory fees regulated by the <strong>Tanzania Wildlife Management Authority (TAWA)</strong>. These fees are separate from your booking fees and are paid directly to the conservation authority.
+            </p>
+            
+            <div class="conservation-fees-grid">
+                <div class="conservation-fee-card">
+                    <h3>1. Entry Fee</h3>
+                    <div class="fee-price">$35</div>
+                    <p class="fee-details"><strong>Per person (one-time)</strong></p>
+                    <p class="fee-description">
+                        Valid for the entire duration of your stay in the Lake Natron Conservation Area. This fee grants you access to enter the protected conservation area and its facilities.
+                    </p>
+                </div>
+
+                <div class="conservation-fee-card">
+                    <h3>2. Accommodation / Overnight Fee</h3>
+                    <div class="fee-price">$29.50</div>
+                    <p class="fee-details"><strong>Per person, per night</strong></p>
+                    <p class="fee-description">
+                        Charged for every night spent within the Lake Natron area, whether you're staying at our lodge or camping. This fee supports conservation and area management.
+                    </p>
+                    <p style="color: #d84315; font-weight: 600; margin-top: 10px;">
+                        💡 Example: 3-night stay = $88.50 per person
+                    </p>
+                </div>
+
+                <div class="conservation-fee-card">
+                    <h3>3. Activity Fee</h3>
+                    <div class="fee-price">$20</div>
+                    <p class="fee-details"><strong>Per person (one-time)</strong></p>
+                    <p class="fee-description">
+                        Covers participation in guided activities within the conservation area, including:
+                    </p>
+                    <ul style="text-align: left; margin: 12px 0; padding-left: 20px;">
+                        <li>Visit to Lake Natron</li>
+                        <li>Hike to the waterfalls</li>
+                        <li>Visit to the hominid footprints site</li>
+                        <li>Flamingo viewing expeditions</li>
+                    </ul>
+                </div>
+
+                <div class="conservation-fee-card" style="border-top-color: #d32f2f;">
+                    <h3>4. Ol Doinyo Lengai Mountain Climb</h3>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin: 15px 0;">
+                        <div style="background: #ffebee; padding: 15px; border-radius: 8px; border-left: 4px solid #d32f2f;">
+                            <p style="margin: 0 0 8px 0; font-weight: 600; color: #c62828;">Solo Climber</p>
+                            <div class="fee-price" style="font-size: 1.8rem;">$123.6</div>
+                            <p style="margin: 5px 0 0 0; color: #666; font-size: 0.9rem;">Per person</p>
+                        </div>
+                        <div style="background: #e8f5e9; padding: 15px; border-radius: 8px; border-left: 4px solid #2e7d32;">
+                            <p style="margin: 0 0 8px 0; font-weight: 600; color: #1b5e20;">Group Climber</p>
+                            <div class="fee-price" style="font-size: 1.8rem; color: #2e7d32;">$93.6</div>
+                            <p style="margin: 5px 0 0 0; color: #666; font-size: 0.9rem;">Min. 2 people</p>
+                        </div>
+                    </div>
+                    <p class="fee-description">
+                        Summit the sacred volcano "Mountain of God." Climbing fees include guide services and access to this challenging but rewarding peak with breathtaking Rift Valley views.
+                    </p>
+                </div>
+            </div>
+
+            <div style="background: #fff; padding: 20px; border-radius: 8px; margin-top: 20px; border-left: 4px solid #f57c00;">
+                <h4 style="color: #e65100; margin-top: 0;">Fee Summary Example</h4>
+                <p style="color: #333; margin-bottom: 15px;">
+                    <strong>3-night stay with activities (Full Board guests):</strong>
+                </p>
+                <table style="width: 100%; border-collapse: collapse; color: #333;">
+                    <tr style="background: #f5f5f5;">
+                        <td style="padding: 10px; border-bottom: 1px solid #ddd;"><strong>Item</strong></td>
+                        <td style="padding: 10px; border-bottom: 1px solid #ddd; text-align: right;"><strong>Cost (USD)</strong></td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px; border-bottom: 1px solid #ddd;">Entry Fee (per person)</td>
+                        <td style="padding: 10px; border-bottom: 1px solid #ddd; text-align: right;">$35.00</td>
+                    </tr>
+                    <tr style="background: #f9f9f9;">
+                        <td style="padding: 10px; border-bottom: 1px solid #ddd;">Overnight Fee (1 nights × $29.5)</td>
+                        <td style="padding: 10px; border-bottom: 1px solid #ddd; text-align: right;">$29.5</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px; border-bottom: 1px solid #ddd;">Activity Fee (per person)</td>
+                        <td style="padding: 10px; border-bottom: 1px solid #ddd; text-align: right;">$20.00</td>
+                    </tr>
+                    <tr style="background: #fff8e1;">
+                        <td style="padding: 10px; font-weight: 600; color: #e65100;"><strong>Total Conservation Fees</strong></td>
+                        <td style="padding: 10px; text-align: right; font-weight: 600; color: #e65100;"><strong>$84.5</strong></td>
+                    </tr>
+                </table>
+                <p style="color: #666; font-size: 0.95rem; margin-top: 15px; font-style: italic;">
+                    <strong>Note:</strong> This is in addition to your lodge accommodation costs. Conservation fees are mandatory and support the protection and management of Lake Natron's unique ecosystem and wildlife.
+                </p>
+            </div>
+        </div>
+
+        <!-- ADD-ONS SECTION -->
+        <div class="add-ons-section">
+            <h2>Optional Add-Ons & Services</h2>
+            <p style="color: #666; line-height: 1.7;">
+                Enhance your stay with our additional services and activities. All add-ons can be arranged directly with our staff or booked in advance via WhatsApp.
+            </p>
+            
+            <div class="add-ons-grid">
+                <div class="add-on-item">
+                    <h4>🥾 Guided Nature Walk</h4>
+                    <p><strong style="color: #40916c;">Included in Lake Natron Activity Fee ($20)</strong></p>
+                    <p>Explore the shores of Lake Natron with expert local guides (2-4 hours). This is covered under the $20 Activity Fee charged by the conservation authority.</p>
+                </div>
+
+                <div class="add-on-item">
+                    <h4>🩵 Flamingo Watching Tour</h4>
+                    <p><strong style="color: #40916c;">Included in Lake Natron Activity Fee ($20)</strong></p>
+                    <p>Experience thousands of pink flamingos in their natural habitat. This guided tour is covered under the $20 Activity Fee charged by the conservation authority.</p>
+                </div>
+
+                <div class="add-on-item">
+                    <h4>🏔️ Ol Doinyo Lengai Mountain Climb</h4>
+                    <p style="color: #666;"><strong style="color: #d32f2f;">Solo: $123.60 | Group (2+): $93.60 per person</strong></p>
+                    <p><strong style="color: #f57c00;">Vehicle Transfer to Starting Point: $100</strong></p>
+                    <p>Challenge yourself on the sacred mountain with sunrise views (8-10 hours). Add the vehicle transfer fee for transport to the climb starting point.</p>
+                </div>
+
+                <div class="add-on-item">
+                    <h4>💧 Waterfall Hike</h4>
+                    <p><strong style="color: #40916c;">Included in Lake Natron Activity Fee ($20)</strong></p>
+                    <p>Scenic hike to Ngare Sero Waterfalls with cooling pools (4-6 hours). This activity is covered under the $20 Activity Fee charged by the conservation authority.</p>
+                </div>
+
+                <div class="add-on-item">
+                    <h4>📷 Photography Tours</h4>
+                    <p><strong style="color: #2d6a4f;">$20 per day</strong></p>
+                    <p>Professional photography guidance at scenic locations with expert positioning for the best shots and optimal lighting times for unforgettable photos.</p>
+                </div>
+
+                <div class="add-on-item">
+                    <h4>🏛️ Maasai Village Visit</h4>
+                    <p><strong style="color: #2d6a4f;">$30 per person</strong></p>
+                    <p>Authentic cultural experience with local communities. Learn traditional ways of life, participate in cultural dances, and support community-based tourism initiatives.</p>
+                </div>
+
+                <div class="add-on-item">
+                    <h4>🦅 Bird Watching Expedition</h4>
+                    <p><strong style="color: #40916c;">Included in Lake Natron Activity Fee ($20)</strong></p>
+                    <p>Early morning bird watching tour for enthusiasts. Observe over 300 bird species in their natural habitat. This is covered under the $20 Activity Fee charged by the conservation authority.</p>
+                </div>
+
+                <div class="add-on-item">
+                    <h4>⛺ Camping at Maasai Boma</h4>
+                    <p><strong style="color: #2d6a4f;">$40 per person per night</strong></p>
+                    <p>Complete camping experience within authentic Maasai communities. Experience traditional lifestyle while camping under the stars with all necessary equipment provided.</p>
+                </div>
+
+                <div class="add-on-item">
+                    <h4>🚕 Airport Transfer (Arusha)</h4>
+                    <p><strong style="color: #2d6a4f;">$250 per pickup or transfer</strong></p>
+                    <p>Round-trip transportation from or to Arusha Airport. Professional and reliable service to ensure convenient travel to and from your accommodation.</p>
+                </div>
+
+                <div class="add-on-item">
+                    <h4>🚗 Serengeti & Nearby Parks Safari</h4>
+                    <p><strong style="color: #f57c00;">Contact us for customization</strong></p>
+                    <p>Multi-day safaris to Serengeti National Park, Ngorongoro Crater, Lake Manyara and other nearby attractions. Contact our team for personalized itineraries and pricing.</p>
+                </div>
+
+                <div class="add-on-item">
+                    <h4>🍖 Special Meals & Cuisine</h4>
+                    <p><strong style="color: #2d6a4f;">$70 per meal</strong></p>
+                    <p>Enjoy special dining experiences including traditional African cuisine, BBQ feasts, and customized special meals prepared by our experienced chef.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ SECTION -->
+        <div class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+            
+            <div class="faq-item">
+                <h4><i class="fas fa-question-circle"></i> Do you offer group discounts?</h4>
+                <p>
+                    Yes! Groups of 6 or more people receive a 10% discount on accommodation rates. Groups of 15+ receive 15% discount. Contact us directly via WhatsApp for group booking arrangements and custom packages.
+                </p>
+            </div>
+
+            <div class="faq-item">
+                <h4><i class="fas fa-question-circle"></i> What is your cancellation policy?</h4>
+                <p>
+                    Cancellations made 7 days before arrival receive a full refund. Cancellations within 7 days are subject to a 50% cancellation fee. No-shows are charged in full. We recommend travel insurance for your bookings.
+                </p>
+            </div>
+
+            <div class="faq-item">
+                <h4><i class="fas fa-question-circle"></i> Are there peak season prices?</h4>
+                <p>
+                    Yes, pricing may increase by 15-20% during peak season (June-September and December-January). Low season discounts of up to 15% are available April-May and October-November. Contact us for current rates.
+                </p>
+            </div>
+
+            <div class="faq-item">
+                <h4><i class="fas fa-question-circle"></i> What payment methods do you accept?</h4>
+                <p>
+                    We accept bank transfers, mobile money (M-Pesa, Airtel Money), PayPal, and cash payments. A 30% deposit is required to confirm bookings, with the balance due 7 days before arrival.
+                </p>
+            </div>
+
+            <div class="faq-item">
+                <h4><i class="fas fa-question-circle"></i> Do you cater to special dietary requirements?</h4>
+                <p>
+                    Absolutely! We accommodate vegetarian, vegan, gluten-free, and other dietary requirements. Please inform us at least 48 hours in advance so our chef can prepare appropriate meals.
+                </p>
+            </div>
+
+            <div class="faq-item">
+                <h4><i class="fas fa-question-circle"></i> Can I extend my stay?</h4>
+                <p>
+                    Yes, we can often accommodate extended stays subject to availability. Weekly stays receive a 5% discount, and monthly stays receive 10% discount. Contact us to arrange longer accommodations.
+                </p>
+            </div>
+
+            <div class="faq-item">
+                <h4><i class="fas fa-question-circle"></i> What is included in tour prices?</h4>
+                <p>
+                    Our tour prices include professional guided tours, transportation where applicable, and park entrance fees. Meals and drinks during tours are typically not included unless specified. Check tour details or ask our staff.
+                </p>
+            </div>
+
+            <div class="faq-item">
+                <h4><i class="fas fa-question-circle"></i> Do you have family or children packages?</h4>
+                <p>
+                    Yes! Children under 12 stay free with full board guests, and receive 50% discount on B&B and room only rates. Cots and high chairs are available upon request. Many of our activities are suitable for families.
+                </p>
+            </div>
+        </div>
+
+        <div style="background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%); padding: 30px; border-radius: 10px; border-left: 5px solid #2d6a4f; margin: 50px 0; text-align: center;">
+            <h3 style="color: #2d6a4f; margin-top: 0;">Ready to Book Your Lake Natron Adventure?</h3>
+            <p style="color: #555; font-size: 1.05rem; margin-bottom: 20px;">
+                Contact us via WhatsApp, email, or the contact form on our website. Our team will help you find the perfect accommodation option and arrange all your activities.
+            </p>
+            <a href="https://wa.me/255748709899?text=I'm%20interested%20in%20booking%20a%20stay%20at%20Naibala%20Lodge" class="book-btn" style="font-size: 1.1rem;">
+                <i class="fab fa-whatsapp"></i> Contact Us on WhatsApp
+            </a>
+        </div>
+
+        <a class="back-link" href="index.html">&larr; Back to Home</a>
+    </div>
+
+    <footer>
+        &copy; 2025 Naibala Lake Natron Lodge. All rights reserved. Designed by Naini Abraham
+    </footer>
+
+    <script>
+        const hamburgerBtn = document.getElementById('hamburgerBtn');
+        const mobileNav = document.getElementById('mobileNav');
+        const closeNavBtn = document.getElementById('closeNavBtn');
+        
+        function openMobileNav() {
+            mobileNav.classList.add('open');
+        }
+        
+        function closeMobileNav() {
+            mobileNav.classList.remove('open');
+        }
+        
+        hamburgerBtn.addEventListener('click', openMobileNav);
+        closeNavBtn.addEventListener('click', closeMobileNav);
+        
+        document.addEventListener('click', function(e) {
+            if (mobileNav.classList.contains('open') && !mobileNav.contains(e.target) && e.target !== hamburgerBtn) {
+                closeMobileNav();
+            }
+        });
+    </script>
+</body>
+</html>

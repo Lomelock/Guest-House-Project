@@ -176,33 +176,113 @@
         }
         .service {
             display: flex;
-            align-items: flex-start;
-            gap: 18px;
-            margin-bottom: 32px;
-            background: #f8f9fa;
-            border-radius: 8px;
-            padding: 18px 14px;
-            box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+            align-items: stretch;
+            gap: 24px;
+            margin-bottom: 40px;
+            background: linear-gradient(135deg, #ffffff 0%, #f5f9f7 100%);
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 4px 15px rgba(45, 106, 79, 0.1);
+            border-left: 5px solid #40916c;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .service:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(45, 106, 79, 0.2);
         }
         .service img {
-            width: 120px;
-            height: 90px;
+            width: 280px;
+            height: 220px;
             object-fit: cover;
-            border-radius: 6px;
+            border-radius: 10px;
             flex-shrink: 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
         }
         .service-content {
             flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
         }
-        @media (max-width: 600px) {
+        .service-content h3 {
+            color: #2d6a4f;
+            font-size: 1.5rem;
+            margin-top: 0;
+            margin-bottom: 12px;
+            letter-spacing: 0.5px;
+        }
+        .service-content p {
+            color: #555;
+            line-height: 1.7;
+            margin: 0;
+            font-size: 1.05rem;
+        }
+        .container {
+            max-width: 1000px;
+        }
+        .container > p:first-of-type {
+            color: #555;
+            line-height: 1.8;
+            font-size: 1.1rem;
+            text-align: center;
+            margin-bottom: 40px;
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            padding: 24px;
+            border-radius: 10px;
+            border-left: 5px solid #40916c;
+        }
+        .container > h1 {
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+        .container > h1::after {
+            content: '';
+            display: block;
+            height: 4px;
+            background: linear-gradient(90deg, #2d6a4f 0%, #40916c 100%);
+            width: 60%;
+            margin-top: 8px;
+            margin-left: 20%;
+            border-radius: 2px;
+        }
+        @media (max-width: 900px) {
             .service {
                 flex-direction: column;
                 align-items: stretch;
+                gap: 18px;
             }
             .service img {
                 width: 100%;
-                height: 140px;
-                margin-bottom: 10px;
+                height: 200px;
+                margin-bottom: 0;
+            }
+        }
+        @media (max-width: 600px) {
+            .service {
+                padding: 18px 14px;
+                gap: 14px;
+                margin-bottom: 30px;
+            }
+            .service img {
+                width: 100%;
+                height: 150px;
+            }
+            .service-content h3 {
+                font-size: 1.2rem;
+            }
+            .service-content p {
+                font-size: 1rem;
+            }
+            .container > h1 {
+                font-size: 1.8rem;
+            }
+            .container > h1::after {
+                width: 80%;
+                margin-left: 10%;
             }
         }
         @media (max-width: 700px) {
@@ -258,15 +338,19 @@
     <div class="container">
         <h1>Tourist Services at Lake Natron, Tanzania</h1>
         <p>
-            Lake Natron is a unique destination in northern Tanzania, famous for its striking landscapes, flamingo populations, and cultural experiences. Below are some of the top tourist services you can enjoy in the area, each designed to make your visit unforgettable:
+            Lake Natron is a unique and extraordinary destination in northern Tanzania, renowned for its striking otherworldly landscapes, massive flamingo populations, and rich cultural heritage. Located in the Gregory Rift Valley, this alkaline lake's distinctive reddish-orange color and unique mineral composition create an ecosystem found nowhere else on Earth. 
+            <br><br>
+            Whether you're seeking thrilling adventure activities, peaceful nature experiences, cultural immersion, or world-class wildlife photography, Lake Natron offers unforgettable opportunities. Our comprehensive range of tourist services is designed and delivered by knowledgeable local guides who possess deep understanding of the region's natural environment, wildlife, and Maasai culture. Each experience is carefully curated to be safe, enjoyable, and respectful to the local community and environment.
+            <br><br>
+            Below are some of the premier tourist services available in the area, each designed to make your Lake Natron visit truly unforgettable:
         </p>
         
         <div class="service">
-            <img src="walking safaris.png" alt="Guided Nature Walks">
+            <img src="tourist services images/Screenshot (9).png" alt="Guided Nature Walks">
             <div class="service-content">
-                <h3>Guided Nature Walks</h3>
+                <h3>🥾 Guided Nature Walks</h3>
                 <p>
-                    Explore the shores of Lake Natron with experienced local guides. Learn about the unique alkaline ecosystem, spot wildlife such as zebras and gazelles, and discover the fascinating geology that shapes this dramatic landscape.
+                    Explore the shores of Lake Natron with experienced local guides who possess intimate knowledge of the region. Learn about the unique alkaline ecosystem that makes Lake Natron one of the world's most extraordinary natural phenomena. Discover diverse wildlife such as zebras, gazelles, and hyenas in their natural habitat, and understand the fascinating geological formations that create this dramatic and otherworldly landscape. Our guides share stories of the land, Maasai traditions, and ecological importance of the lake. Walks can be customized to your fitness level, ranging from easy 2-hour strolls to more challenging all-day expeditions.
                 </p>
             </div>
         </div>
@@ -274,19 +358,19 @@
         <div class="service">
             <img src="tourist services images/Screenshot (7).png" alt="Flamingo Watching">
             <div class="service-content">
-                <h3>Flamingo Watching</h3>
+                <h3>🩵 Flamingo Watching</h3>
                 <p>
-                    Lake Natron is the most important breeding site for lesser flamingos in East Africa. Witness thousands of flamingos nesting and feeding in the shallow, mineral-rich waters—an awe-inspiring spectacle, especially during the breeding season.
+                    Lake Natron is the most important breeding site for lesser flamingos in East Africa, hosting hundreds of thousands of these magnificent birds. Witness an awe-inspiring spectacle as thousands of flamingos nest and feed in the shallow, mineral-rich waters that give the lake its distinctive reddish hue. The best time to visit is during the breeding season (April-September) when you'll see chicks and intense nesting activity. Our guides will take you to optimal viewing points where you can photograph and observe these elegant birds up close. The pink coloration of the flamingos comes from carotenoid pigments in their food, creating one of nature's most beautiful color displays.
                 </p>
             </div>
         </div>
         
         <div class="service">
-            <img src="lengai image.webp" alt="Ol Doinyo Lengai Volcano">
+            <img src="tourist services images/Screenshot (32).png" alt="Ol Doinyo Lengai Volcano">
             <div class="service-content">
-                <h3>Ol Doinyo Lengai Volcano Tours</h3>
+                <h3>🏔️ Ol Doinyo Lengai Volcano Tours</h3>
                 <p>
-                    Embark on a trek to Ol Doinyo Lengai, the "Mountain of God" and an active volcano sacred to the Maasai. Adventurous visitors can climb to the summit for sunrise, enjoying breathtaking views of the Rift Valley and surrounding landscapes.
+                    Embark on an unforgettable trek to Ol Doinyo Lengai, the "Mountain of God" and an active volcano that holds sacred significance for the Maasai people. This challenging yet rewarding climb takes adventurous visitors to an altitude of 2,962 meters. The trek typically begins in the early morning hours to reach the summit for sunrise, rewarding climbers with breathtaking panoramic views of the Rift Valley, surrounding landscapes, and the golden light illuminating Lake Natron far below. At the summit, you can observe the crater and unique carbonatite lava formations. This is a moderately strenuous hike suitable for those with good fitness levels. Our experienced guides provide all necessary support and share the cultural and geological significance of this sacred mountain.
                 </p>
             </div>
         </div>
@@ -294,19 +378,19 @@
         <div class="service">
             <img src="tourist services images/Screenshot (58).png" alt="Waterfall Hikes">
             <div class="service-content">
-                <h3>Waterfall Hikes</h3>
+                <h3>💧 Waterfall Hikes</h3>
                 <p>
-                    Hike through scenic gorges to reach the beautiful Ngare Sero Waterfalls. Cool off in the refreshing pools, enjoy a picnic, and take in the lush greenery—a stark contrast to the arid plains around the lake.
+                    Hike through scenic gorges and lush green valleys to reach the beautiful Ngare Sero Waterfalls, a verdant oasis hidden within the arid landscape. This moderate hike takes you through diverse terrain with stunning views of ancient rock formations and native vegetation. Cool off in the refreshing natural pools beneath the cascading waters, an invigorating contrast to Lake Natron's hot mineral waters. Pack a picnic and enjoy meals surrounded by the soothing sounds of flowing water and birdsong. The gorge environment supports unique flora and fauna, making this an excellent spot for nature photography and wildlife observation. The hike typically takes 4-6 hours round trip and is suitable for most fitness levels.
                 </p>
             </div>
         </div>
         
         <div class="service">
-            <img src="maasai visit image.png" alt="Maasai Cultural Visits">
+            <img src="tourist services images/Screenshot (42).png" alt="Maasai Cultural Visits">
             <div class="service-content">
-                <h3>Maasai Cultural Visits</h3>
+                <h3>🏛️ Maasai Cultural Visits</h3>
                 <p>
-                    Visit authentic Maasai villages to learn about their rich traditions, daily life, and crafts. Participate in traditional dances, sample local cuisine, and support community-based tourism initiatives.
+                    Visit authentic Maasai villages to gain deep insights into one of Africa's most vibrant cultures. Our cultural visits are designed with respect for local communities and support their sustainable livelihoods. Learn about traditional Maasai life, including pastoralist practices, social structures, and ceremonies passed down through generations. Participate in traditional dances performed in traditional clothing, sample authentic local cuisine prepared using traditional methods, and shop for handcrafted beaded jewelry and artifacts created by skilled artisans. You'll have the opportunity to interact directly with villagers, ask questions, and develop genuine cultural understanding. All tourism activities directly benefit local families and support community development initiatives.
                 </p>
             </div>
         </div>
@@ -314,9 +398,9 @@
         <div class="service">
             <img src="tourist services images/Screenshot (60).png" alt="Bird Watching">
             <div class="service-content">
-                <h3>Bird Watching</h3>
+                <h3>🦅 Bird Watching</h3>
                 <p>
-                    Besides flamingos, Lake Natron is home to a variety of bird species, including pelicans, storks, and waders. Birdwatchers will delight in the diversity and abundance of avian life in this unique habitat.
+                    Besides the iconic lesser flamingos, Lake Natron is home to a remarkable diversity of bird species, making it a paradise for birdwatchers. Observe pelicans gracefully diving for fish, elegant storks wading through shallow waters, and numerous wader species including avocets and sandpipers. Over 300 bird species have been recorded in and around the lake, with different species present in different seasons. Our knowledgeable guides can help you identify species, understand their behaviors, and locate prime viewing spots. Early morning birding expeditions are particularly rewarding when birds are most active. Bring binoculars and a camera to capture images of these magnificent creatures in their natural habitat. Both beginners and experienced birders will find abundant opportunities for rewarding observations.
                 </p>
             </div>
         </div>
@@ -324,9 +408,9 @@
         <div class="service">
             <img src="tourist services images/Screenshot (16).png" alt="Camping and Picnics">
             <div class="service-content">
-                <h3>Camping &amp; Picnics</h3>
+                <h3>⛺ Camping &amp; Picnics</h3>
                 <p>
-                    Experience the tranquility of Lake Natron by camping under the stars or enjoying a picnic in safe, scenic spots. Our staff can help arrange all necessary equipment and meals for a memorable outdoor adventure.
+                    Experience the unparalleled tranquility of Lake Natron by camping under the stars in one of Tanzania's most pristine and remote locations. Our carefully selected camping sites offer safe, scenic locations with stunning views of the lake and surrounding landscape. We provide all necessary equipment including comfortable tents, sleeping bags, and camping gear, or you can bring your own. Our staff prepares delicious meals using local ingredients and traditional cooking methods. Enjoy the spectacular night sky far from light pollution, with countless stars illuminating the darkness. For those preferring not to camp overnight, we organize scenic picnics at prime locations with packed lunches, comfortable seating, and all refreshments provided. Sunset picnics are particularly magical as the landscape transforms in golden light.
                 </p>
             </div>
         </div>
@@ -334,9 +418,9 @@
         <div class="service">
             <img src="tourist services images/Screenshot (54).png" alt="Photography Tours">
             <div class="service-content">
-                <h3>Photography Tours</h3>
+                <h3>📷 Photography Tours</h3>
                 <p>
-                    Capture the dramatic landscapes, vibrant wildlife, and stunning sunsets of Lake Natron. Local guides know the best spots and times for unforgettable photos.
+                    Lake Natron is a photographer's dream destination with countless stunning subjects and dramatic compositions. Capture the otherworldly landscape with its stark red waters, towering cliffs, and abundant wildlife. Our expert guides know the best spots and optimal times for unforgettable photography—golden hour sunrises paint the sky in warm tones, while dramatic afternoon light creates sharp contrasts and deep shadows. Photograph thousands of pink flamingos in flight, majestic Maasai warriors in traditional dress, local wildlife, and the region's unique geological formations. Whether you're using a professional DSLR, mirrorless camera, or smartphone, our guides provide guidance on composition, settings, and subject locations. We offer both general photography tours and specialized sessions tailored to your specific photographic interests.
                 </p>
             </div>
         </div>
@@ -344,17 +428,17 @@
         <div class="service">
             <img src="tourist services images/Screenshot (3).png" alt="Custom Safari Excursions">
             <div class="service-content">
-                <h3>Custom Safari Excursions</h3>
+                <h3>🚗 Custom Safari Excursions</h3>
                 <p>
-                    Organize safaris to nearby world-famous attractions such as Serengeti National Park, Ngorongoro Crater, or Lake Manyara. We help tailor your safari for the best wildlife viewing and cultural experiences.
+                    Organize custom safaris to nearby world-famous attractions and expand your East African adventure beyond Lake Natron. Visit the vast Serengeti National Park to witness the spectacular annual migration of millions of wildebeest and zebras, or explore the stunning Ngorongoro Crater, a UNESCO World Heritage Site featuring diverse ecosystems and wildlife concentrations. Lake Manyara offers excellent opportunities to see elephants, tree-climbing lions, and flamingo populations. Our expert guides coordinate accommodations, transportation, permits, and activities to tailor your safari perfectly to your interests and budget. Multi-day safari packages combine Lake Natron experiences with these iconic destinations, creating comprehensive East African wildlife and cultural experiences. We can also arrange visits to cultural sites, national parks, and lesser-known hidden gems.
                 </p>
             </div>
         </div>
         
-        <p>
-            For more information or to book any of these services, please contact us using the available contact form or WhatsApp by clicking on the WhatsApp icon on the header. We are happy to help you plan an unforgettable experience at Lake Natron!
+        <p style="background: linear-gradient(135deg, #c8e6c9 0%, #a5d6a7 100%); padding: 28px; border-radius: 10px; border-left: 5px solid #2d6a4f; margin: 40px 0; font-size: 1.1rem; line-height: 1.8; color: #1b4332;">
+            <strong>Ready to Experience Lake Natron?</strong> For more information about any of these services or to book your perfect Lake Natron experience, please contact us using our contact form on the home page or send us a WhatsApp message by clicking the WhatsApp icon in the header. Our dedicated team is happy to answer your questions, provide recommendations based on your interests, and help you plan an unforgettable adventure that will create lifelong memories.
         </p>
-        <a class="back-link" href="index.html">&larr; Back to Home</a>
+        <a class="back-link" href="index.html" style="font-size: 1.1rem; padding: 10px 20px; display: inline-block; border-radius: 6px; background: #2d6a4f; color: white; text-decoration: none; transition: background 0.3s ease;">&larr; Back to Home</a>
     </div>
     <footer>
         &copy; 2025 Naibala Lake Natron Lodge. All rights reserved.Designed by Naini Abraham

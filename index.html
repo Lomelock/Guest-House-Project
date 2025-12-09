@@ -103,10 +103,42 @@
         nav a:hover {
             color: #40916c;
         }
+        nav a {
+            display: inline-block;
+        }
         section {
             max-width: 1100px;
             margin: 40px auto;
             padding: 0 20px;
+        }
+        section h2 {
+            color: #2d6a4f;
+            font-size: 2.2rem;
+            text-align: center;
+            margin-bottom: 30px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        section h2::after {
+            content: '';
+            display: block;
+            height: 3px;
+            background: linear-gradient(90deg, #2d6a4f 0%, #40916c 100%);
+            width: 80px;
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+        #about {
+            background: linear-gradient(135deg, #f0f8f5 0%, #ffffff 100%);
+            border-radius: 12px;
+            padding: 40px !important;
+            margin-top: 50px !important;
+        }
+        #about p {
+            color: #555;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
         }
         .features {
             display: flex;
@@ -115,31 +147,66 @@
             justify-content: center;
         }
         .feature {
-            background: #fff;
-            border-radius: 10px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
-            padding: 30px 20px;
+            background: linear-gradient(135deg, #ffffff 0%, #f5f9f7 100%);
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(45, 106, 79, 0.1);
+            padding: 30px 24px;
             flex: 1 1 250px;
             min-width: 250px;
-            max-width: 320px;
+            max-width: 340px;
             text-align: center;
+            border-top: 5px solid #40916c;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .feature:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 25px rgba(45, 106, 79, 0.2);
+        }
+        .feature h3 {
+            color: #2d6a4f;
+            font-size: 1.4rem;
+            margin: 15px 0 12px 0;
+        }
+        .feature p {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.6;
         }
         .feature i {
-            font-size: 2.5rem;
-            color: #2d6a4f;
-            margin-bottom: 10px;
+            font-size: 3rem;
+            color: #40916c;
+            margin-bottom: 12px;
+        }
+        .feature a {
+            display: inline-block;
+            margin-top: 12px;
+            padding: 8px 16px;
+            color: #fff;
+            background: #2d6a4f;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+        .feature a:hover {
+            background: #40916c;
         }
         .gallery {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 18px;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
         }
         .gallery img {
             width: 100%;
-            border-radius: 8px;
-            height: 180px;
+            border-radius: 10px;
+            height: 220px;
             object-fit: cover;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .gallery img:hover {
+            transform: scale(1.03);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
         }
         .contact-form {
             background: #fff;
@@ -170,6 +237,45 @@
         }
         .contact-form button:hover {
             background: #40916c;
+        }
+        .info-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+        .info-card {
+            background: #fff;
+            padding: 24px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+            border-left: 5px solid #40916c;
+        }
+        .info-card h4 {
+            color: #2d6a4f;
+            font-size: 1.15rem;
+            margin: 0 0 10px 0;
+        }
+        .info-card p {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin: 0;
+        }
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #2d6a4f 0%, #40916c 100%);
+            color: #fff;
+            padding: 14px 32px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 10px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(45, 106, 79, 0.3);
         }
         footer {
             text-align: center;
@@ -296,8 +402,32 @@
     <section id="about">
         <h2>About Us</h2>
         <p>
-            Welcome to Naibala Lake Natron Lodge, where comfort meets adventure! Nestled in the heart of the region's most breathtaking attractions, we specialize in hosting guests who are passionate about exploring nature, culture, and local wonders. Our dedicated team ensures your stay is both relaxing and filled with memorable tourism experiences.
+            Welcome to <strong>Naibala Lake Natron Lodge</strong>, where comfort meets adventure in one of Tanzania's most extraordinary destinations! Nestled in the heart of the Lake Natron region, we serve as the perfect base for exploring the wonders of this unique landscape. Our lodge specializes in hosting guests who are passionate about nature exploration, cultural immersion, and creating unforgettable memories.
         </p>
+        <p>
+            Founded with a vision to provide authentic, sustainable tourism experiences, Naibala Lake Natron Lodge combines comfortable accommodation with access to world-class attractions. From the otherworldly pink flamingos to the sacred Ol Doinyo Lengai volcano, from pristine waterfall hikes to genuine Maasai cultural encounters, we help you experience the full spectrum of Lake Natron's magic.
+        </p>
+        
+        <div class="info-section">
+            <div class="info-card">
+                <h4>🌍 Our Location</h4>
+                <p>
+                    Strategically located in the Lake Natron Conservation Area in northern Tanzania's Gregory Rift Valley, minutes away from all major attractions and cultural landmarks. Easy access to Arusha and surrounding national parks.
+                </p>
+            </div>
+            <div class="info-card">
+                <h4>👥 Our Team</h4>
+                <p>
+                    Our dedicated staff includes experienced local guides, hospitality professionals, and tourism experts who possess deep knowledge of the region's ecology, culture, and wildlife. We're committed to providing personalized service.
+                </p>
+            </div>
+            <div class="info-card">
+                <h4>🌱 Our Commitment</h4>
+                <p>
+                    We're dedicated to sustainable tourism that respects the environment and benefits local communities. All our activities are conducted with minimal ecological impact and maximum support for Maasai communities.
+                </p>
+            </div>
+        </div>
     </section>
     <section id="features">
         <h2>Why Stay With Us?</h2>
@@ -305,49 +435,91 @@
             <div class="feature">
                 <i class="fas fa-map-marked-alt"></i>
                 <h3>Prime Location</h3>
-                <p>Minutes away from top tourist spots, hiking trails, and cultural landmarks.</p>
+                <p>Located minutes away from Lake Natron's top attractions, including flamingo habitats, hiking trails, waterfalls, and Maasai villages. Direct access to world-class tourism experiences.</p>
             </div>
             <div class="feature">
                 <i class="fas fa-hiking"></i>
-                <h3>Tourist Services</h3>
-                <p>Guided tours, local guides, and custom itineraries for every explorer.</p>
-                <a href="Touristservices.html" style="display:inline-block;margin-top:10px;color:#2d6a4f;font-weight:600;text-decoration:none;">Explore Services</a>
+                <h3>Expert Tourist Services</h3>
+                <p>Guided tours, experienced local guides, and fully customizable itineraries. From casual walks to challenging mountain climbs, we organize adventures for every explorer's skill level.</p>
+                <a href="Touristservices.html">Explore Services →</a>
             </div>
             <div class="feature">
                 <i class="fas fa-bed"></i>
-                <h3>Cozy Accommodation</h3>
-                <p>Modern, comfortable rooms with all amenities for a restful stay.</p>
-                <a href="pices.html" style="display:inline-block;margin-top:10px;color:#2d6a4f;font-weight:600;text-decoration:none;">See Prices &amp; Availability</a>
+                <h3>Comfortable Accommodation</h3>
+                <p>Modern, well-maintained rooms with all essential amenities. Choose from Full Board, Bed & Breakfast, or Room Only options. Flexible meal plans to suit all preferences and budgets.</p>
+                <a href="pices.html">View Pricing →</a>
             </div>
             <div class="feature">
                 <i class="fas fa-utensils"></i>
-                <h3>Local Cuisine</h3>
-                <p>Enjoy delicious local dishes and international favorites every day.</p>
-                 
+                <h3>Authentic Local Cuisine</h3>
+                <p>Enjoy delicious traditional Tanzanian dishes prepared with fresh local ingredients, alongside international favorites. Special meals and dietary requirements accommodated upon request.</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-shield-alt"></i>
+                <h3>Safety & Security</h3>
+                <p>24/7 security, professional staff trained in guest safety, and trusted transportation. Your well-being and peace of mind are our top priorities throughout your stay.</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-heart"></i>
+                <h3>Community Support</h3>
+                <p>We are committed to sustainable tourism. Your stay directly supports local Maasai communities through employment, cultural exchange programs, and community development initiatives.</p>
             </div>
         </div>
     </section>
     <section id="gallery">
-        <h2>Gallery</h2>
+        <h2>Visual Journey Through Lake Natron</h2>
+        <p style="text-align: center; color: #666; font-size: 1.05rem; margin-bottom: 30px; max-width: 700px; margin-left: auto; margin-right: auto;">
+            Explore the breathtaking landscapes, vibrant wildlife, and authentic cultural experiences that await you at Naibala Lake Natron Lodge. These images showcase the natural wonders and unforgettable moments you can experience during your stay.
+        </p>
         <div class="gallery">
             <img src="PXL_20250723_081710438.jpg" alt="Lake Natron View 1">
             <img src="PXL_20250723_081617387.jpg" alt="Lake Natron View 2">
             <img src="PXL_20250723_081457393.MP.jpg" alt="Lake Natron View 3">
             <img src="PXL_20250721_152016626.jpg" alt="Lake Natron View 4">
-            <img src="PXL_20250720_132132574.jpg" alt="Lake Natron View 4">
-            <img src="PXL_20250715_105339175.jpg" alt="Lake Natron View 4">
-            <img src="PXL_20250723_081701837.jpg" alt="Lake Natron View 4">
-            <img src="PXL_20250714_081713851.jpg" alt="Lake Natron View 4">
+            <img src="PXL_20250720_132132574.jpg" alt="Lake Natron View 5">
+            <img src="PXL_20250715_105339175.jpg" alt="Lake Natron View 6">
+            <img src="PXL_20250723_081701837.jpg" alt="Lake Natron View 7">
+            <img src="PXL_20250714_081713851.jpg" alt="Lake Natron View 8">
         </div>
     </section>
     <section id="contact">
-        <h2>Contact Us</h2>
-        <form class="contact-form">
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Your Email" required>
-            <textarea rows="4" placeholder="Your Message" required></textarea>
-            <button type="submit">Send Message</button>
-        </form>
+        <h2>Get In Touch & Book Your Adventure</h2>
+        <p style="text-align: center; color: #666; font-size: 1.05rem; margin-bottom: 30px; max-width: 700px; margin-left: auto; margin-right: auto;">
+            Ready to experience the magic of Lake Natron? Contact us today to book your accommodation, arrange tours, or ask any questions about your stay. We're here to help make your visit unforgettable!
+        </p>
+        
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; max-width: 1000px; margin: 0 auto 40px; align-items: start;">
+            <div class="contact-form">
+                <h3 style="color: #2d6a4f; margin-top: 0;">Send us a Message</h3>
+                <form>
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <input type="text" placeholder="Subject" required>
+                    <textarea rows="4" placeholder="Your Message" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+            
+            <div>
+                <h3 style="color: #2d6a4f; margin-top: 0;">Other Ways to Reach Us</h3>
+                <div class="info-card">
+                    <h4>📱 WhatsApp</h4>
+                    <p>Message us directly on WhatsApp for quick responses about bookings and inquiries.</p>
+                    <a href="https://wa.me/255748709899" class="cta-button" style="font-size: 0.9rem;">Chat on WhatsApp</a>
+                </div>
+                <div class="info-card">
+                    <h4>📧 Email</h4>
+                    <p>Send us detailed inquiries about specific services and customized packages.</p>
+                    <p style="margin-top: 8px; color: #2d6a4f; font-weight: 600;">naibalalakenatronlodge@gmail.com</p>
+                </div>
+                <div class="info-card">
+                    <h4>📍 Physical Address</h4>
+                    <p>Lake Natron Conservation Area<br>Arusha Region, Tanzania<br><br>Located minutes from all major attractions</p>
+                </div>
+            </div>
+        </div>
+
+       
     </section>
     <footer>
         &copy; 2025 Naibala Lake Natron Lodge. All rights reserved. Designed by Naini Abraham
