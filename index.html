@@ -262,6 +262,23 @@
             line-height: 1.6;
             margin: 0;
         }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto 40px;
+            align-items: start;
+            padding: 0 12px;
+        }
+        .contact-grid .info-card {
+            margin-bottom: 16px;
+        }
+        .contact-grid > div:last-child {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
         .cta-button {
             display: inline-block;
             background: linear-gradient(135deg, #2d6a4f 0%, #40916c 100%);
@@ -360,6 +377,13 @@
                 padding-top: 60px;
                 padding-bottom: 210px; /* Further increase for mobile */
                 background-position: center 105%;
+            }
+            .contact-grid {
+                grid-template-columns: 1fr;
+                padding: 0 18px;
+            }
+            .contact-grid > div:last-child {
+                gap: 12px;
             }
         }
     </style>
@@ -488,7 +512,7 @@
             Ready to experience the magic of Lake Natron? Contact us today to book your accommodation, arrange tours, or ask any questions about your stay. We're here to help make your visit unforgettable!
         </p>
         
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; max-width: 1000px; margin: 0 auto 40px; align-items: start;">
+        <div class="contact-grid">
             <div class="contact-form">
                 <h3 style="color: #2d6a4f; margin-top: 0;">Send us a Message</h3>
                 <form>
