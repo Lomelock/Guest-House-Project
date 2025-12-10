@@ -329,6 +329,226 @@
             margin: 0;
             line-height: 1.6;
         }
+        .location-section {
+            background: linear-gradient(135deg, #f0f8f5 0%, #ffffff 100%);
+            border-radius: 14px;
+            padding: 50px 30px;
+            margin: 60px auto;
+            max-width: 1200px;
+            box-shadow: 0 6px 20px rgba(45, 106, 79, 0.1);
+        }
+        .location-section h2 {
+            color: #2d6a4f;
+            font-size: 2.5rem;
+            text-align: center;
+            margin: 0 0 40px 0;
+            position: relative;
+            padding-bottom: 20px;
+        }
+        .location-section h2::after {
+            content: '';
+            display: block;
+            height: 4px;
+            background: linear-gradient(90deg, #2d6a4f 0%, #40916c 100%);
+            width: 120px;
+            margin: 15px auto 0;
+            border-radius: 2px;
+        }
+        .location-content {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+        .location-text h3 {
+            color: #2d6a4f;
+            font-size: 1.7rem;
+            margin-top: 0;
+            margin-bottom: 18px;
+        }
+        .location-text p {
+            color: #555;
+            font-size: 1.02rem;
+            line-height: 1.9;
+            margin-bottom: 16px;
+        }
+        .location-image {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(45, 106, 79, 0.2);
+            height: auto;
+            position: sticky;
+            top: 20px;
+        }
+        .location-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            aspect-ratio: 4/3;
+            object-fit: cover;
+        }
+        .directions-container {
+            background: #fff;
+            border-radius: 12px;
+            padding: 28px;
+            margin-top: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            border-top: 5px solid #40916c;
+        }
+        .directions-container h3 {
+            color: #2d6a4f;
+            font-size: 1.35rem;
+            margin: 0 0 24px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .direction-route {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 24px;
+        }
+        .route-card {
+            background: linear-gradient(135deg, #f5f9f7 0%, #ffffff 100%);
+            padding: 24px;
+            border-radius: 10px;
+            border-left: 5px solid #40916c;
+            box-shadow: 0 2px 8px rgba(45, 106, 79, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .route-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 16px rgba(45, 106, 79, 0.15);
+        }
+        .route-card h4 {
+            color: #2d6a4f;
+            font-size: 1.15rem;
+            margin: 0 0 14px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 600;
+        }
+        .route-card i {
+            font-size: 1.3rem;
+            color: #40916c;
+        }
+        .route-card ol {
+            color: #555;
+            font-size: 0.98rem;
+            line-height: 1.8;
+            margin: 0;
+            padding-left: 24px;
+        }
+        .route-card li {
+            margin-bottom: 12px;
+        }
+        .distance-info {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            padding: 16px;
+            border-radius: 8px;
+            margin-top: 14px;
+            font-size: 0.92rem;
+            color: #2d6a4f;
+            font-weight: 500;
+        }
+        @media (max-width: 900px) {
+            .location-section {
+                padding: 35px 20px;
+                margin: 40px auto;
+            }
+            .location-section h2 {
+                font-size: 2rem;
+                margin-bottom: 30px;
+            }
+            .location-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            .location-image {
+                position: relative;
+                top: 0;
+            }
+            .direction-route {
+                grid-template-columns: 1fr;
+            }
+            .directions-container {
+                padding: 20px;
+            }
+            .directions-container h3 {
+                font-size: 1.2rem;
+            }
+            .route-card {
+                padding: 18px;
+            }
+            .route-card h4 {
+                font-size: 1.05rem;
+            }
+        }
+        @media (max-width: 600px) {
+            .location-section {
+                padding: 24px 16px;
+                margin: 30px auto;
+            }
+            .location-section h2 {
+                font-size: 1.6rem;
+                margin-bottom: 24px;
+            }
+            .location-section h2::after {
+                width: 80px;
+            }
+            .location-text h3 {
+                font-size: 1.4rem;
+                margin-bottom: 14px;
+            }
+            .location-text p {
+                font-size: 0.95rem;
+                line-height: 1.7;
+                margin-bottom: 12px;
+            }
+            .directions-container {
+                padding: 16px;
+                margin-top: 24px;
+            }
+            .directions-container h3 {
+                font-size: 1.1rem;
+                margin-bottom: 16px;
+            }
+            .direction-route {
+                gap: 14px;
+            }
+            .route-card {
+                padding: 14px;
+            }
+            .route-card h4 {
+                font-size: 0.95rem;
+                margin-bottom: 10px;
+            }
+            .route-card ol {
+                font-size: 0.9rem;
+                padding-left: 18px;
+            }
+            .route-card li {
+                margin-bottom: 8px;
+            }
+            .distance-info {
+                font-size: 0.85rem;
+                padding: 12px;
+                margin-top: 10px;
+            }
+        }
+        @media (max-width: 400px) {
+            .location-section h2 {
+                font-size: 1.4rem;
+            }
+            .location-text h3 {
+                font-size: 1.2rem;
+            }
+            .route-card h4 i {
+                display: none;
+            }
+        }
         .hamburger {
             display: none;
             position: absolute;
@@ -534,6 +754,78 @@
             <img src="PXL_20250714_081713851.jpg" alt="Lake Natron View 8">
         </div>
     </section>
+
+    <!-- LOCATION & DIRECTIONS SECTION -->
+    <div class="location-section">
+        <h2>🌍 Tanzania • Arusha Region • Lake Natron (Engaresero)</h2>
+        
+        <div class="location-content">
+            <div class="location-text">
+                <h3>✨ Discover Lake Natron</h3>
+                <p>
+                    <strong>Lake Natron</strong> is one of Tanzania's most extraordinary natural wonders, located in the northern region near Arusha in the Gregory Rift Valley. This unique alkaline lake is famous worldwide for its striking reddish-orange mineral waters and massive flamingo populations—it hosts the largest breeding ground for lesser flamingos in East Africa.
+                </p>
+                <p>
+                    The name <strong>"Engaresero"</strong> in the local Maasai language means "the place of little water," and the lake sits at approximately 600 meters above sea level. The region is characterized by dramatic landscape features including the active Ol Doinyo Lengai volcano ("Mountain of God"), pristine waterfalls, and authentic Maasai villages. The dry savanna environment contrasts beautifully with lush gorges and vegetation patches that support diverse wildlife.
+                </p>
+                <p>
+                    Lake Natron is a <strong>protected conservation area</strong>, recognized for its global ecological importance. The high mineral concentration (sodium carbonate) and unique conditions make it inhospitable to most fish and freshwater organisms, but ideal for salt-loving bacteria and algae that create the water's distinctive pink color and sustain the massive flamingo populations.
+                </p>
+                
+                <div class="directions-container">
+                    <h3><i class="fas fa-map-location-dot"></i> How to Reach Naibala Lake Natron Lodge</h3>
+                    
+                    <div class="direction-route">
+                        <div class="route-card">
+                            <h4><i class="fas fa-plane-departure"></i> From Kilimanjaro International Airport</h4>
+                            <ol>
+                                <li>Arrive at Kilimanjaro International Airport (approximately 50 km from Arusha)</li>
+                                <li>Arrange airport pickup or rent a vehicle</li>
+                                <li>Drive to Arusha town (approximately 1 hour)</li>
+                                <li>Continue northeast toward Lake Natron via Arusha-Loliondo Road</li>
+                                <li>Arrive at Naibala Lodge in Engaresero Village</li>
+                            </ol>
+                            <div class="distance-info">
+                                <strong>⏱️ Travel Time:</strong> 5-6 hours<br>
+                                <strong>📏 Distance:</strong> 120-150 km
+                            </div>
+                        </div>
+
+                        <div class="route-card">
+                            <h4><i class="fas fa-city"></i> From Arusha Town</h4>
+                            <ol>
+                                <li>Start from central Arusha town</li>
+                                <li>Head northeast on the main road toward Engaresero</li>
+                                <li>Continue through rural landscapes and small villages</li>
+                                <li>Follow directional signs toward Lake Natron Conservation Area</li>
+                                <li>Arrive at Naibala Lake Natron Lodge</li>
+                            </ol>
+                            <div class="distance-info">
+                                <strong>⏱️ Driving Time:</strong> 5-6 hours<br>
+                                <strong>📏 Distance:</strong> 80-100 km
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="background: linear-gradient(135deg, #fff8e1 0%, #ffe0b2 100%); padding: 18px; border-radius: 8px; border-left: 4px solid #f57c00; margin-top: 18px;">
+                        <strong style="color: #e65100; display: flex; align-items: center; gap: 8px; font-size: 1.05rem; margin-bottom: 12px;"><i class="fas fa-lightbulb"></i> Travel Tips</strong>
+                        <ul style="margin: 0; padding-left: 24px; color: #555; font-size: 0.95rem; line-height: 1.8;">
+                            <li><strong>Road Conditions:</strong> The route from Mtowambu to Lake Natron is a mix of paved and unpaved sections. A sturdy vehicle is recommended.</li>
+                            <li><strong>Pre-Book Transfer:</strong> Arrange your airport transfer in advance via WhatsApp: +255 748 709 899</li>
+                            <li><strong>Travel Safety:</strong> Depart during daylight hours for safety and better scenery appreciation.</li>
+                            <li><strong>Transfer Cost:</strong> $250 per pickup/transfer from Arusha or airport</li>
+                            <li><strong>Self-Drive Option:</strong> Arrange a rental car (4WD recommended for dry season)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="location-image">
+                <img src="lake natron image .png" alt="Lake Natron Stunning Aerial View">
+            </div>
+        </div>
+    </div>
+
     <section id="contact">
         <h2>Get In Touch & Book Your Adventure</h2>
         <p style="text-align: center; color: #666; font-size: 1.05rem; margin-bottom: 30px; max-width: 700px; margin-left: auto; margin-right: auto;">
